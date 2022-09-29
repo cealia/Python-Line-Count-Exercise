@@ -22,8 +22,11 @@ class LineCounter:
         lines = []
         for file in files:
             with open(file, "r") as f_file:
-                lines.append(sum(b.count("\n") for b in self.blocks(f_file)))
-                print(f'{file} {lines[-1]}')
+                try:
+                    lines.append(sum(b.count("\n") for b in self.blocks(f_file)))
+                    print(f'{file} {lines[-1]}')
+                except UnicodeDecodeError:
+                    print('Not utf-8 encoded')
         total_num_of_lines = sum(lines)
         if num_of_files:
             avg = total_num_of_lines/num_of_files
