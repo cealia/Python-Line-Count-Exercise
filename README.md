@@ -74,7 +74,7 @@ lc.get_line()
 def blocks(file, size=1024 * 1024):
         """
         Use a generator to read blocks from a file one by one;
-        Avoid oom on an extremely large file
+        Avoid oom when reading an extremely large file
         """
         while True:
             block = file.read(size)
@@ -93,3 +93,4 @@ python -m unittest
 4. Test for directory listing when there's no file of the same extension: should be able to handle division by zero
 
 ## pylint
+<img src="https://github.com/cealia/Python-Line-Count-Exercise/blob/main/pic/pylint.png" width="50%">
