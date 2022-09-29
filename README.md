@@ -1,6 +1,6 @@
 # Python Line Count Exercise
 
-a Python program that takes a directory as a required argument and a filename extension as optional argument that defaults to “.txt”. The program should locate all files with the given extension in the given directory and all its subdirectories to produce a list of all matching files with the numbers of lines within the file. The program should also output the total number of lines and the average number of lines per file. 
+This is a Python program that takes a directory as a required argument and a filename extension as optional argument that defaults to “.txt”. The program should locate all files with the given extension in the given directory and all its subdirectories to produce a list of all matching files with the numbers of lines within the file. The program should also output the total number of lines and the average number of lines per file. 
 
 For example:
 
@@ -46,6 +46,13 @@ Average lines per file:: 1.3333333333333333
 ```
 
 + Module usage
+* example:
+```python
+from linecounter.linecounter import LineCounter
+
+lc = LineCounter('./mydir2', '.txt')
+lc.get_line()
+```
 
 Init function
 ```python
@@ -56,13 +63,7 @@ Read in files recursively and count lines
 ```
 LineCounter.get_line() -> tuple
 ```
- * example:
-```python
-from linecounter.linecounter import LineCounter
-
-lc = LineCounter('./mydir2', '.txt')
-lc.get_line()
-```
+ 
 
 
 
@@ -87,9 +88,9 @@ def blocks(file, size=1024 * 1024):
 ```python
 python -m unittest    
 ```
-1. Test for a 2-layer recursive directory listing .txt extension files
-2. Test for a 3-layer recursive directory listing .txt extension files
-3. Test for a 3-layer recursive directory listing .py extension (something other than .txt) files
+1. Test for a 2-layer recursive directory listing all .txt extension files
+2. Test for a 3-layer recursive directory listing all .txt extension files
+3. Test for a 3-layer recursive directory listing all .py extension (something other than .txt) files
 4. Test for directory listing when there's no file of the same extension: should be able to handle division by zero
 
 ## pylint
