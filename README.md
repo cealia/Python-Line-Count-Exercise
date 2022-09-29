@@ -46,7 +46,7 @@ Average lines per file:: 1.3333333333333333
 ```
 
 + Module usage
-* example:
+example:
 ```python
 from linecounter.linecounter import LineCounter
 
